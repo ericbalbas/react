@@ -8,15 +8,16 @@ import './index.css';
 
 class App extends Component {
   render(){
-    return(
-      <div className='text-4xl font-bold'>
+    return (
+      <div className="text-4xl font-bold">
         <Navbar />
-        <Welcome />
-        <Name />
-        <Position />
+        <Welcome people='Eric John' />
+        {/* <Name /> */}
+        {/* <Position subject="Git" description=", Git is function" animation='bounce'/> */}
+        {/* <Position subject="Github" description=", Github is Service " animation='pulse' bg='' /> */}
+        {/* <Position subject="React" description=", React is a Library" animation='' /> */}
       </div>
-      
-      )
+    );
   }
 }
 export default App;
