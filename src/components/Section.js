@@ -3,31 +3,78 @@ import Typed from "typed.js";
 import myPicture from "../assets/me2.png";
 import AOS from 'aos';
 import 'aos/dist/aos.css'; // Import the AOS styles
+import { UsersIcon,PuzzlePieceIcon,CodeBracketIcon, FlagIcon } from "@heroicons/react/24/outline";
+
+const Card = ({ title, description, icon , color, delay  }) => {
+  return (
+    <div
+      className="max-w-md mx-auto bg-white rounded-lg overflow-hidden shadow-md mb-4"
+      data-aos="fade-right"
+      data-aos-delay={`${delay}`}
+    >
+      {/* Card Header */}
+      <div className="bg-gray-100 p-4 flex items-center justify-center card-header">
+        <div
+          className={` ${color} h-10 w-10 flex items-center justify-center rounded-full mr-2 header-icon`}
+        >
+          {icon}
+        </div>
+        <h2 className="text-xl font-semibold text-gray-700 card-text-header">{title}</h2>
+      </div>
+
+      {/* Card Body */}
+      <div className="p-4 card-body">
+        <p className="text-lg text-gray-600 py-4 px-4 text-justify card-text-body">
+          {description}
+        </p>
+      </div>
+    </div>
+  );
+};
+
+
 
 const Section = () => {
   useEffect(() => {
-    // // Initialize Typed.js for h1 element
-    // const typedH1 = new Typed("#typed-h1", {
-    //   strings: ["I'm Eric John Balbas,"],
-    //   typeSpeed: 50,
-    //   showCursor: false,
-    // });
-
-    // // Initialize Typed.js for p element
-    // const typedP = new Typed("#typed-p", {
-    //   strings: [Full stack web developer."],
-    //   typeSpeed: 50,
-    //   showCursor: false,
-    // });
-
     AOS.init();
-
-    // Clean up Typed instances on unmount
-    // return () => {
-    //   typedH1.destroy();
-    //   typedP.destroy();
-    // };
   }, []);
+
+   const cardsData = [
+     {
+       title: "Me",
+       delay: "300",
+       icon: <UsersIcon className="h-6 w-6 text-white icon" />,
+       color: "bg-blue-600",
+       description:
+         "Hello, I'm Eric John Balbas, a Web Developer from San Fabian, Pangasinan. Passionate about coding and innovation. Join me on this journey in the dynamic world of web development.",
+     },
+     {
+       title: "Things I like to do",
+       delay: "450",
+       icon: <PuzzlePieceIcon className="h-6 w-6 text-white icon" />,
+       color: "bg-purple-600",
+       description:
+         "I enjoy playing video games, participating in sports, reading books, and coding. Each activity contributes a unique element to my life, creating a dynamic mix of enjoyment, challenge, and learning.",
+     },
+     {
+       title: "Programming thoughts",
+       delay: "550",
+       icon: <CodeBracketIcon className="h-6 w-6 text-white icon" />,
+       color: "bg-orange-600",
+       description:
+         "Code is my canvas, crafting digital possibilities and Embracing challenges. I find joy in the art of programming.",
+     },
+     {
+       title: "Career",
+       delay: "650",
+       icon: <FlagIcon className="h-6 w-6 text-white icon" />,
+       color: "bg-green-600",
+       description:
+         "Navigating the digital realm, my career is a journey of innovation, problem-solving, and continuous growth in the ever-evolving field of web development.",
+     },
+     // Add more cards as needed
+   ];
+
 
   return (
     <>
@@ -62,48 +109,26 @@ const Section = () => {
         </div>
       </section>
 
-      {/* Add other sections as needed */}
-      {/* Section 2: About Us */}
+      {/* Section 2: about */}
       <section
         id="about"
-        className="h-screen flex flex-col justify-center items-center text-center "
+        className="h-screen flex flex-col justify-center items-center text-center"
       >
-        <div className="container mt-5 px-12 py-12">
-          <div className="text-center">
-            <h2
-              className="text-3xl font-bold mb-4"
-              data-aos="fade-up"
-              data-aos-delay="400"
-            >
-              About Me
-            </h2>
-            <p
-              className="text-lg text-gray-700 text-justify leading-loose flex-none"
-              id="aboutMe"
-              data-aos="fade-left"
-              data-aos-delay="600"
-            >
-              Hey there! Eric John Balbas, a code enthusiast and dedicated Web
-              Developer residing in the vibrant town of San Fabian Pangasinan.
-              My journey into the realm of programming has been nothing short of
-              exhilarating. From crafting elegant lines of code to architecting
-              robust web applications, I find solace in the world of algorithms
-              and the endless possibilities they offer. Passionate about turning
-              innovative ideas into functional and user-friendly solutions, I'm
-              constantly pushing my boundaries to stay at the forefront of
-              technology. Beyond the screen, you'll find me immersed in the
-              latest programming books, exploring open-source projects, and
-              engaging with the ever-evolving tech community. I believe in the
-              power of continuous learning and thrive in environments that
-              foster creativity and collaboration. When not coding, I enjoy
-              reading books, sports and online games, and also learning
-              algorithms fueling my curiosity and providing a well-rounded
-              perspective that transcends the digital realm. Let's embark on
-              this coding adventure together!
-            </p>
-
-            {/* Add more content as needed, such as skills, education, etc. */}
-            {/* Add more sections like education, work experience, etc. */}
+        <div className="container mx-auto px-8" id="about-card">
+          <div
+            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 "
+            id="about-wrapper"
+          >
+            {cardsData.map((card, index) => (
+              <Card
+                key={index}
+                title={card.title}
+                description={card.description}
+                icon={card.icon}
+                color={card.color}
+                delay={card.delay}
+              />
+            ))}
           </div>
         </div>
       </section>
