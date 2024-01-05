@@ -1,7 +1,6 @@
 import React, {Component} from 'react';
 import Navbar from './components/Navbar';
 import Section from './components/Section';
-import Dropdown from './components/NavbarSimple';
 import './index.css';
 
 

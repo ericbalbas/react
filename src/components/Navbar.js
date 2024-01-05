@@ -35,7 +35,7 @@ const Navbar = () => {
   return (
     <nav className="bg-gray-50 px-8 py-3 fixed w-full top-0 z-10">
       <div className="container mx-auto flex justify-between items-center">
-        <div className="text-gray-800 text-2xl font-bold hover:animate-bounce navigator me-2">
+        <div className="text-gray-800 text-2xl font-bold hover:animate-bounce navigator">
           Portfolio.
         </div>
         <div className="links-container">

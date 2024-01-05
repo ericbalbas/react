@@ -43,7 +43,7 @@ const Section = () => {
           <img
             src={myPicture}
             alt="Your Name"
-            className="w-100 h-100 object-cover rounded-full mr-10"
+            className="w-100 h-100 object-cover rounded-full"
             data-aos="fade-up-left"
             data-aos-delay="600"
           />
@@ -78,7 +78,7 @@ const Section = () => {
               About Me
             </h2>
             <p
-              className="text-lg text-gray-700 text-justify leading-loose"
+              className="text-lg text-gray-700 text-justify leading-loose flex-none"
               id="aboutMe"
               data-aos="fade-left"
               data-aos-delay="600"
