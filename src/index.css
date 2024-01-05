@@ -44,4 +44,8 @@ code {
     font-size: .8rem!important;
     padding: 0;
   }
+
+  #aboutMe{
+    font-size: small;
+  }
 }

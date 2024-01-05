@@ -1,9 +1,7 @@
 import React, {Component} from 'react';
-import Welcome from './components/Welcome';
-import Name from './components/Name';
 import Navbar from './components/Navbar';
-import Position from './components/Position';
 import Section from './components/Section';
+import Dropdown from './components/NavbarSimple';
 import './index.css';
 
 
