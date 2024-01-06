@@ -16,15 +16,27 @@ const Card = ({ title, description, icon , color, delay  }) => {
       <div className="bg-gray-100 p-4 flex items-center justify-center card-header">
         <div
           className={` ${color} h-10 w-10 flex items-center justify-center rounded-full mr-2 header-icon`}
+          data-aos="slide-right"
+          data-aos-delay={`${700}`}
         >
           {icon}
         </div>
-        <h2 className="text-xl font-semibold text-gray-700 card-text-header">{title}</h2>
+        <h2
+          className="text-xl font-semibold text-gray-700 card-text-header"
+          data-aos="slide-left"
+          data-aos-delay={`${700}`}
+        >
+          {title}
+        </h2>
       </div>
 
       {/* Card Body */}
       <div className="p-4 card-body">
-        <p className="text-lg text-gray-600 py-4 px-4 text-justify card-text-body">
+        <p
+          className="text-lg text-gray-600 py-4 px-4 text-justify card-text-body"
+          data-aos="fade-down"
+          data-aos-delay={`${700}`}
+        >
           {description}
         </p>
       </div>
@@ -84,7 +96,7 @@ const Section = () => {
         className="h-screen flex items-center justify-center text-white"
       >
         <div
-          className="container mt-10 flex justify-center items-center"
+          className="container flex justify-center items-center"
           data-aos="fade-up"
         >
           <img
@@ -112,7 +124,7 @@ const Section = () => {
       {/* Section 2: about */}
       <section
         id="about"
-        className="h-screen flex flex-col justify-center items-center text-center"
+        className="h-screen pt-20 flex flex-col justify-center items-center text-center"
       >
         <div className="container mx-auto px-8" id="about-card">
           <div

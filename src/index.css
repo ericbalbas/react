@@ -11,6 +11,7 @@ html,body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+
 }
 
 code {
@@ -18,7 +19,15 @@ code {
     monospace;
 }
 
-@media (max-width: 767px) {
+/* section{
+  margin-top: 50px;
+} */
+  
+@media screen and (max-width: 767px) {
+
+  /* section{
+    padding-top: 50px;
+  } */
 
   html,body{
     overflow-anchor: none;
@@ -43,11 +52,10 @@ code {
   }
 
   #home img {
-    margin-top: 20px;
+    padding-top: 50px;
     margin-right: 0;
-    /* margin-bottom: 10px; */
-    height: 500px !important;
-    width: 400px !important;
+    max-width: 80%;
+    height: 100%;
   }
 
   nav li a{
@@ -59,9 +67,9 @@ code {
     font-size: small;
   }
 
-  #about-card{
-    margin-top: 10%;
-  }
+  /* #about-card{ */
+    /* margin-top: 1rem; */
+  /* } */
   #about-wrapper{
     gap:5px;
   }
@@ -88,6 +96,36 @@ code {
 
   .card-body .card-text-body{
      font-size: small;
-     padding: 0%;
+     line-height: normal;
+     padding: 0;
   }
 }
+
+/* Styles for medium screens (height between 600px and 899px) */
+@media screen and (max-width: 320px) {
+ #home img {
+    margin-top: 20%;
+    margin-right: 0;
+    max-width: 50%;
+    height: 100%;
+  }
+  .profile{
+    line-height: normal;
+  }
+
+  .profile #typed-p{
+    font-size:  smaller;
+    margin-top: -20px;
+  }
+  #home .text-left h1 {
+    font-size: 1.5rem!important;
+    
+  }
+
+  .container {
+    width: 100%; /* Full width for small screens */
+  }
+}
+
+
+
