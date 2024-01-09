@@ -3,26 +3,38 @@ import Typed from "typed.js";
 import myPicture from "../assets/me2.png";
 import AOS from 'aos';
 import 'aos/dist/aos.css'; // Import the AOS styles
-import { UsersIcon,PuzzlePieceIcon,CodeBracketIcon, FlagIcon } from "@heroicons/react/24/outline";
+import { UsersIcon,PuzzlePieceIcon,CodeBracketIcon,FlagIcon,PhoneIcon, EnvelopeIcon, CodeBracketSquareIcon,MapPinIcon } from "@heroicons/react/24/outline";
+
+
 
 const Card = ({ title, description, icon , color, delay  }) => {
+  
+  const gradient = {
+    blue: "bg-gradient-to-r from-blue-400 via-blue-500 to-blue-600",
+    purple: "bg-gradient-to-r from-purple-400 via-purple-500 to-purple-600",
+    orange: "bg-gradient-to-r from-orange-400 via-orange-500 to-orange-600",
+    green: "bg-gradient-to-r from-green-400 via-green-500 to-green-600",
+  };
+
   return (
     <div
-      className="max-w-md mx-auto bg-white rounded-lg overflow-hidden shadow-md mb-4"
+      className="max-w-md mx-auto rounded-lg overflow-hidden shadow-md mb-4 bg-gray-800"
       data-aos="fade-right"
       data-aos-delay={`${delay}`}
     >
       {/* Card Header */}
-      <div className="bg-gray-100 p-4 flex items-center justify-center card-header">
+      <div
+        className={`p-4 flex items-center justify-center card-header bg-gray-700 border-2 rounded-md border-gray-500`}
+      >
         <div
-          className={` ${color} h-10 w-10 flex items-center justify-center rounded-full mr-2 header-icon`}
+          className={`bg-blue-600 h-10 w-10 flex items-center justify-center rounded-full mr-2 header-icon`}
           data-aos="slide-right"
           data-aos-delay={`${700}`}
         >
           {icon}
         </div>
         <h2
-          className="text-xl font-semibold text-gray-700 card-text-header"
+          className="text-xl font-bold text-sky-500  card-text-header"
           data-aos="slide-left"
           data-aos-delay={`${700}`}
         >
@@ -31,9 +43,9 @@ const Card = ({ title, description, icon , color, delay  }) => {
       </div>
 
       {/* Card Body */}
-      <div className="p-4 card-body">
+      <div className={`p-2 card-body`}>
         <p
-          className="text-lg text-gray-600 py-4 px-4 text-justify card-text-body"
+          className="text-lg text-gray-300 py-4 px-4 text-justify card-text-body"
           data-aos="fade-down"
           data-aos-delay={`${700}`}
         >
@@ -44,6 +56,24 @@ const Card = ({ title, description, icon , color, delay  }) => {
   );
 };
 
+const TimeLine = ({ count, year, icon, title, description }) => {
+  const position = count % 2 == 0 ? "start" : "end";
+  return (
+    <li>
+      <div className="timeline-middle p-2">{icon}</div>
+      <div
+        className={`timeline-${position} md:text-${
+          count % 2 == 0 ? "end" : "start"
+        } mb-10`}
+      >
+        <time className="text-xl ">{year}</time>
+        <div className="text-xl text-sky-500">{title}</div>
+        {description}
+      </div>
+      <hr className="w-5 h-5 bg-primary" />
+    </li>
+  );
+};
 
 
 const Section = () => {
@@ -55,7 +85,7 @@ const Section = () => {
      {
        title: "Me",
        delay: "300",
-       icon: <UsersIcon className="h-6 w-6 text-white icon" />,
+       icon: <UsersIcon className="h-6 w-6text-gray-300 icon" />,
        color: "bg-blue-600",
        description:
          "Hello, I'm Eric John Balbas, a Web Developer from San Fabian, Pangasinan. Passionate about coding and innovation. Join me on this journey in the dynamic world of web development.",
@@ -63,7 +93,7 @@ const Section = () => {
      {
        title: "Things I like to do",
        delay: "450",
-       icon: <PuzzlePieceIcon className="h-6 w-6 text-white icon" />,
+       icon: <PuzzlePieceIcon className="h-6 w-6 text-gray-300 icon" />,
        color: "bg-purple-600",
        description:
          "I enjoy playing video games, participating in sports, reading books, and coding. Each activity contributes a unique element to my life, creating a dynamic mix of enjoyment, challenge, and learning.",
@@ -71,20 +101,62 @@ const Section = () => {
      {
        title: "Programming thoughts",
        delay: "550",
-       icon: <CodeBracketIcon className="h-6 w-6 text-white icon" />,
-       color: "bg-orange-600",
+       icon: <CodeBracketIcon className="h-6 w-6 text-gray-300 icon" />,
+       color: "bg-violet-600",
        description:
          "Code is my canvas, crafting digital possibilities and Embracing challenges. I find joy in the art of programming.",
      },
      {
        title: "Career",
        delay: "650",
-       icon: <FlagIcon className="h-6 w-6 text-white icon" />,
-       color: "bg-green-600",
+       icon: <FlagIcon className="h-6 w-6 text-gray-300 icon" />,
+       color: "bg-sky-600",
        description:
          "Navigating the digital realm, my career is a journey of innovation, problem-solving, and continuous growth in the ever-evolving field of web development.",
      },
      // Add more cards as needed
+   ];
+
+   const TimelineData = [
+     {
+       year: "2018",
+       icon: <UsersIcon className="h-6 w-6 text-sky-500 icon " />,
+       title: "Dummy title",
+       description: (
+         <p class="text-sm">
+           iMac is a family of all-in-one Mac desktop computers designed and
+           built by Apple Inc. It has been the primary part of Apple's consumer
+           desktop offerings since its debut in August 1998, and has evolved
+           through seven distinct forms
+         </p>
+       ),
+     },
+     {
+       year: "2022",
+       icon: <UsersIcon className="h-6 w-6 text-sky-500 icon " />,
+       title: "Dummy title",
+       description: (
+         <p class="text-sm">
+           iMac is a family of all-in-one Mac desktop computers designed and
+           built by Apple Inc. It has been the primary part of Apple's consumer
+           desktop offerings since its debut in August 1998, and has evolved
+           through seven distinct forms
+         </p>
+       ),
+     },
+     {
+       year: "2023",
+       icon: <UsersIcon className="h-6 w-6 text-sky-500 icon " />,
+       title: "Dummy title",
+       description: (
+         <p class="text-sm">
+           iMac is a family of all-in-one Mac desktop computers designed and
+           built by Apple Inc. It has been the primary part of Apple's consumer
+           desktop offerings since its debut in August 1998, and has evolved
+           through seven distinct forms
+         </p>
+       ),
+     },
    ];
 
 
@@ -107,16 +179,39 @@ const Section = () => {
             data-aos-delay="600"
           />
           <div
-            className="text-left text-gray-800 profile"
+            className="text-left profile"
             data-aos="fade-down-right"
             data-aos-delay="600"
           >
-            <h1 id="typed-h1" className="text-4xl font-bold mb-2">
+            <h1 id="typed-h1" className="text-4xl text-sky-500 font-bold mb-2">
               I'm Eric John Balbas
             </h1>
-            <p id="typed-p" className="text-xl">
-              Full stack web developer.
-            </p>
+            <div className="flex items-center ps-2 mb-2">
+              <CodeBracketSquareIcon className="w-6 h-6 mr-2 text-sky-500" />
+              <p id="typed-p" className="text-xl font-semibold text-gray-400">
+                Full Stak Developer
+              </p>
+            </div>
+            <div className="flex items-center ps-2  mb-2">
+              <PhoneIcon className="w-6 h-6 mr-2 text-sky-500" />
+              <p id="typed-p" className="text-xl font-semibold text-gray-400">
+                +639683070411
+              </p>
+            </div>
+
+            <div className="flex items-center ps-2 mb-2">
+              <EnvelopeIcon className="w-6 h-6 mr-2 text-sky-500" />
+              <p id="typed-p" className="text-xl font-semibold text-gray-400">
+                ericjohnbalbas@gmail.com
+              </p>
+            </div>
+
+            <div className="flex items-center ps-2 mb-2">
+              <MapPinIcon className="w-6 h-6 mr-2 text-sky-500" />
+              <p id="typed-p" className="text-xl font-semibold text-gray-400">
+                St. tomas, Batangas, Philippines.
+              </p>
+            </div>
           </div>
         </div>
       </section>
@@ -150,8 +245,79 @@ const Section = () => {
         id="experience"
         className="h-screen flex flex-col justify-center items-center text-center"
       >
-        <h2 className="text-4xl font-bold">Experience</h2>
-        <p>Explore our professional journey...</p>
+        <div className="container mx-auto px-8" id="experience-card">
+          <ul className="timeline timeline-snap-icon max-md:timeline-compact timeline-vertical">
+            {/* <li>
+              <div className="timeline-middle">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 20 20"
+                  fill="currentColor"
+                  className="h-5 w-5"
+                >
+                  <path
+                    fillRule="evenodd"
+                    d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z"
+                    clipRule="evenodd"
+                  />
+                </svg>
+              </div>
+              <div className="timeline-start md:text-end mb-10">
+                <time className="font-mono italic">1984</time>
+                <div className="text-lg font-black">
+                  First Macintosh computer
+                </div>
+                The Apple Macintosh—later rebranded as the Macintosh 128K—is the
+                original Apple Macintosh personal computer. It played a pivotal
+                role in establishing desktop publishing as a general office
+                function. The motherboard, a 9 in (23 cm) CRT monitor, and a
+                floppy drive were housed in a beige case with integrated
+                carrying handle; it came with a keyboard and single-button
+                mouse.
+              </div>
+              <hr />
+            </li>
+            <li>
+              <hr />
+              <div className="timeline-middle">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 20 20"
+                  fill="currentColor"
+                  className="h-5 w-5"
+                >
+                  <path
+                    fillRule="evenodd"
+                    d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z"
+                    clipRule="evenodd"
+                  />
+                </svg>
+              </div>
+              <div className="timeline-end mb-10">
+                <time className="font-mono italic">1998</time>
+                <div className="text-lg font-black">iMac</div>
+                iMac is a family of all-in-one Mac desktop computers designed
+                and built by Apple Inc. It has been the primary part of Apple's
+                consumer desktop offerings since its debut in August 1998, and
+                has evolved through seven distinct forms
+              </div>
+              <hr />
+            </li> */}
+            {TimelineData.map((data, index) => {
+              console.log(index); // Log the index/key
+              return (
+                <TimeLine
+                  key={index}
+                  count={index}
+                  year={data.year}
+                  icon={data.icon}
+                  title={data.title}
+                  description={data.description}
+                />
+              );
+            })}
+          </ul>
+        </div>
       </section>
 
       {/* Section 4: Skills */}
