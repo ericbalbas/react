@@ -1,16 +1,21 @@
 {
   "files": {
-    "main.css": "/react/static/css/main.4797d749.css",
-    "main.js": "/react/static/js/main.41b231dc.js",
+    "main.css": "/react/static/css/main.f36c59b1.css",
+    "main.js": "/react/static/js/main.83fe4903.js",
     "static/js/496.f4f847b8.chunk.js": "/react/static/js/496.f4f847b8.chunk.js",
+    "static/media/fuxz.jpg": "/react/static/media/fuxz.90816ac2551f468bcc87.jpg",
+    "static/media/itermidiate.png": "/react/static/media/itermidiate.bb2dcd7e89078460f1b0.png",
     "static/media/me2.png": "/react/static/media/me2.fc4a77b29eb0c6e63dad.png",
+    "static/media/javascript.png": "/react/static/media/javascript.1ee1c8be2e74f9818e58.png",
+    "static/media/php.png": "/react/static/media/php.7989a7c49f298ccef22a.png",
+    "static/media/avatar.jpg": "/react/static/media/avatar.6867ebb3f4c0b1054bce.jpg",
     "index.html": "/react/index.html",
-    "main.4797d749.css.map": "/react/static/css/main.4797d749.css.map",
-    "main.41b231dc.js.map": "/react/static/js/main.41b231dc.js.map",
+    "main.f36c59b1.css.map": "/react/static/css/main.f36c59b1.css.map",
+    "main.83fe4903.js.map": "/react/static/js/main.83fe4903.js.map",
     "496.f4f847b8.chunk.js.map": "/react/static/js/496.f4f847b8.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.4797d749.css",
-    "static/js/main.41b231dc.js"
+    "static/css/main.f36c59b1.css",
+    "static/js/main.83fe4903.js"
   ]
 }
