@@ -1,6 +1,7 @@
 import React, { useEffect } from "react";
 import Typed from "typed.js";
 import myPicture from "../assets/me2.png";
+import HomeElement from "./HomeElement";
 import AOS from 'aos';
 import 'aos/dist/aos.css'; // Import the AOS styles
 import { UsersIcon,PuzzlePieceIcon,CodeBracketIcon,FlagIcon,PhoneIcon, EnvelopeIcon, CodeBracketSquareIcon,MapPinIcon } from "@heroicons/react/24/outline";
@@ -27,7 +28,7 @@ const Card = ({ title, description, icon , color, delay  }) => {
         className={`p-4 flex items-center justify-center card-header bg-gray-700 border-2 rounded-md border-gray-500`}
       >
         <div
-          className={`bg-blue-600 h-10 w-10 flex items-center justify-center rounded-full mr-2 header-icon`}
+          className={`bg-purple-600 h-10 w-10 flex items-center justify-center rounded-full mr-2 header-icon`}
           data-aos="slide-right"
           data-aos-delay={`${700}`}
         >
@@ -60,7 +61,7 @@ const TimeLine = ({ count, year, icon, title, description }) => {
   const position = count % 2 == 0 ? "start" : "end";
   return (
     <li>
-      <div className="timeline-middle p-2">{icon}</div>
+      <div className="timeline-middle rounded-full bg-purple-700 p-2">{icon}</div>
       <div
         className={`timeline-${position} md:text-${
           count % 2 == 0 ? "end" : "start"
@@ -70,7 +71,7 @@ const TimeLine = ({ count, year, icon, title, description }) => {
         <div className="text-xl text-sky-500">{title}</div>
         {description}
       </div>
-      <hr className="w-5 h-5 bg-primary" />
+      <hr className="w-5 h-5 bg-gray-300" />
     </li>
   );
 };
@@ -120,7 +121,7 @@ const Section = () => {
    const TimelineData = [
      {
        year: "2018",
-       icon: <UsersIcon className="h-6 w-6 text-sky-500 icon " />,
+       icon: <UsersIcon className="h-6 w-6 text-gray-300 icon " />,
        title: "Dummy title",
        description: (
          <p class="text-sm">
@@ -133,7 +134,7 @@ const Section = () => {
      },
      {
        year: "2022",
-       icon: <UsersIcon className="h-6 w-6 text-sky-500 icon " />,
+       icon: <UsersIcon className="h-6 w-6 text-gray-300 icon " />,
        title: "Dummy title",
        description: (
          <p class="text-sm">
@@ -146,7 +147,7 @@ const Section = () => {
      },
      {
        year: "2023",
-       icon: <UsersIcon className="h-6 w-6 text-sky-500 icon " />,
+       icon: <UsersIcon className="h-6 w-6 text-gray-300 icon " />,
        title: "Dummy title",
        description: (
          <p class="text-sm">
@@ -184,31 +185,59 @@ const Section = () => {
             data-aos-delay="600"
           >
             <h1 id="typed-h1" className="text-4xl text-sky-500 font-bold mb-2">
-              I'm Eric John Balbas
+              <HomeElement
+                data={[
+                  "I'm Eric John Balbas",
+                  "Dummy Text 2",
+                  "Dummy Text 3",
+                  "Dummy Text 4",
+                ]}
+              />
             </h1>
             <div className="flex items-center ps-2 mb-2">
-              <CodeBracketSquareIcon className="w-6 h-6 mr-2 text-sky-500" />
-              <p id="typed-p" className="text-xl font-semibold text-gray-400">
+              <div class="p-1 rounded-full bg-purple-700">
+                <CodeBracketSquareIcon className="w-5 h-5  text-gray-300" />
+              </div>
+              <p
+                id="typed-p"
+                className="text-xl ms-2 font-semibold text-gray-400"
+              >
                 Full Stak Developer
               </p>
             </div>
             <div className="flex items-center ps-2  mb-2">
-              <PhoneIcon className="w-6 h-6 mr-2 text-sky-500" />
-              <p id="typed-p" className="text-xl font-semibold text-gray-400">
+              <div class="p-1 rounded-full bg-purple-700">
+                <PhoneIcon className="w-5 h-5  text-gray-300" />
+              </div>
+              <p
+                id="typed-p"
+                className="text-xl ms-2 font-semibold text-gray-400"
+              >
                 +639683070411
               </p>
             </div>
 
             <div className="flex items-center ps-2 mb-2">
-              <EnvelopeIcon className="w-6 h-6 mr-2 text-sky-500" />
-              <p id="typed-p" className="text-xl font-semibold text-gray-400">
+              <div class="p-1 rounded-full bg-purple-700">
+                <EnvelopeIcon className="w-5 h-5  text-gray-300" />
+              </div>
+
+              <p
+                id="typed-p"
+                className="text-xl ms-2 font-semibold text-gray-400"
+              >
                 ericjohnbalbas@gmail.com
               </p>
             </div>
 
             <div className="flex items-center ps-2 mb-2">
-              <MapPinIcon className="w-6 h-6 mr-2 text-sky-500" />
-              <p id="typed-p" className="text-xl font-semibold text-gray-400">
+              <div class="p-1 rounded-full bg-purple-700">
+                <MapPinIcon className="w-5 h-5  text-gray-300" />
+              </div>
+              <p
+                id="typed-p"
+                className="text-xl ms-2 font-semibold text-gray-400"
+              >
                 St. tomas, Batangas, Philippines.
               </p>
             </div>

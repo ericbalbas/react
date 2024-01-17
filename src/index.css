@@ -19,9 +19,18 @@ code {
     monospace;
 }
 
-/* section{
-  margin-top: 50px;
-} */
+@keyframes slideIn {
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+.changing-element {
+  animation: slideIn 0.5s ease-in-out;
+}
   
 @media screen and (max-width: 767px) {
 
@@ -55,7 +64,7 @@ code {
     padding-top: 50px;
     margin-right: 0;
     max-width: 80%;
-    height: 100%;
+    aspect-ratio: .6;
   }
 
   nav li a{
@@ -107,7 +116,7 @@ code {
     margin-top: 20%;
     margin-right: 0;
     max-width: 50%;
-    height: 100%;
+    aspect-ratio: .5;
   }
   .profile{
     line-height: normal;

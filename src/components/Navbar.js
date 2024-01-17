@@ -43,11 +43,11 @@ const Navbar = () => {
     <nav className="px-8 py-3 fixed w-full top-0 z-10" data-theme="night">
       <div className="container mx-auto flex justify-between items-center">
         <div
-          className="flex items-center text-gray-300 text-2xl font-bold hover:animate-bounce navigator"
+          className="flex items-center text-sky-500 text-2xl font-bold hover:animate-bounce navigator"
           data-theme="night"
         >
           <div
-            className={`bg-sky-500 h-10 w-10 flex items-center justify-center rounded-full mr-2 header-icon`}
+            className={`bg-purple-700 h-10 w-10 flex items-center justify-center rounded-full mr-2 header-icon`}
             data-aos="fade-right"
             data-aos-delay={`${700}`}
           >

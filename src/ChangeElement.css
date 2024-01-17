@@ -1,0 +1,12 @@
+@keyframes fadeInOut {
+  0%, 100% {
+    opacity: 0;
+  }
+  70% {
+    opacity: 1;
+  }
+}
+
+.changing-element {
+  animation: fadeInOut 3s ease-in-out infinite; /* Change duration to match the text change interval */
+}
