@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { Icon } from "@iconify/react";
 
 export const Details = ({ data }) => {
@@ -39,14 +39,14 @@ export const Timeline = ({ data }) => {
 };
 
 export const Career = ({ data }) => {
- const colorMap = {
-   "HTML/CSS": { title: "text-orange-500", bg: "bg-orange-500" },
-   JS: { title: "text-yellow-500", bg: "bg-yellow-500" },
-   PHP: { title: "text-purple-700", bg: "bg-purple-500" },
-   React: { title: "text-sky-700", bg: "bg-sky-300" },
-   MySQL: { title: "text-blue-700", bg: "bg-blue-300" },
-   Frameworks: { title: "text-pink-700", bg: "bg-pink-300" },
- };
+  const colorMap = {
+    "HTML/CSS": { title: "text-orange-500", bg: "bg-orange-500" },
+    JS: { title: "text-yellow-500", bg: "bg-yellow-500" },
+    PHP: { title: "text-purple-700", bg: "bg-purple-500" },
+    React: { title: "text-sky-700", bg: "bg-sky-300" },
+    MySQL: { title: "text-blue-700", bg: "bg-blue-300" },
+    Frameworks: { title: "text-pink-700", bg: "bg-pink-300" },
+  };
 
   return (
     <>
@@ -82,7 +82,10 @@ export const Career = ({ data }) => {
                     {item.title}
                   </span>
                   <div className="flex items-center ml-2 mb-1">
-                    <Icon icon="icon-park-outline:level" className="w-3 h-3 text-gray-500" />
+                    <Icon
+                      icon="icon-park-outline:level"
+                      className="w-3 h-3 text-gray-500"
+                    />
                     <span
                       className="font-bold text-sm text-gray-500 ml-0.5"
                       title="skill percentage"
@@ -100,17 +103,17 @@ export const Career = ({ data }) => {
   );
 };
 
-export const Carousel = ({data}) => {
+export const Carousel = ({ data }) => {
   return (
     <>
-      {data.map((item,index)=>{
+      {data.map((item, index) => {
         return (
           <div
             id={`slide${index}`}
             className="carousel-item relative w-full h-full"
             key={index}
           >
-            <img src={item.img} className="w-full h-full" />
+            <img src={item.img} className="w-full h-full object-cover" />
             <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
               <a
                 href={`#slide${index === 0 ? data.length - 1 : index - 1}`}
@@ -130,5 +133,28 @@ export const Carousel = ({data}) => {
       })}
     </>
   );
-}
+};
 
+export const Background = ({ images }) => {
+  const [currentBgIndex , setCurrentBgIndex] = useState(0);
+
+  useEffect(() => {
+    const interval = setInterval(()=>{
+      setCurrentBgIndex((prevIndex) => (prevIndex + 1) % images.length);
+    },5000)
+
+  return () => clearInterval(interval);
+  }, [images]);
+
+  const currentBackground = images[currentBgIndex];
+  return (
+    <div className="w-full h-[250px] transition-transform ease-in-out duration-1000">
+      <img
+        src={currentBackground}
+        className="w-full h-full object-cover transition-opacity ease-in-out duration-1000"
+        style={{ opacity: 1 }}
+        alt="Profile Background"
+      />
+    </div>
+  );
+}

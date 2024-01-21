@@ -1,11 +1,16 @@
 import React, { useEffect, useState } from "react";
 import avatar from '../assets/avatar.jpg'
-import Background from '../assets/fuxz.jpg'
+import Background1 from '../assets/fuxz.jpg'
+import Background2 from '../assets/geometry.jpg'
+import Background3 from '../assets/sunset.jpg'
+import Background4 from '../assets/sunset2.jpg'
+import Background5 from '../assets/pink.jpg'
+import Background6 from '../assets/geometric-background-xio5gqujk0rkjzlq.jpg'
 import JsCert from '../assets/javascript.png'
 import InterCert from '../assets/itermidiate.png'
 import PHPCert from '../assets/php.png'
 
-import {Details, Timeline, Career, Carousel} from "./Details";
+import {Details, Timeline, Career, Carousel, Background} from "./Details";
 import Flag from '../assets/ph.png'
 import {CodeBracketIcon} from "@heroicons/react/24/outline";
 import { Icon } from "@iconify/react";
@@ -144,6 +149,9 @@ const CarouselData = [
     img : PHPCert
   },
 ]
+const BackgroundData = [
+  Background1,Background2,Background3,Background4,Background5,Background6
+]
 
 //
 
@@ -269,13 +277,7 @@ const LandingPage = () => {
              </div>
            )}
          </div>
-         <div className="w-full h-[250px]">
-           <img
-             src={Background}
-             className="w-full h-full object-cover rounded-tl-lg rounded-tr-lg"
-             alt="Profile Background"
-           />
-         </div>
+         <Background images={BackgroundData} />
 
          <div className="flex flex-col items-center -mt-20">
            <img
@@ -393,13 +395,13 @@ const LandingPage = () => {
            <div class="flex-2 bg-white rounded-lg shadow-xl p-8">
              <h4 class="text-xl text-gray-900 font-bold">About</h4>
              <p class="mt-2 text-gray-700">
-               Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt
-               voluptates obcaecati numquam error et ut fugiat asperiores. Sunt
-               nulla ad incidunt laboriosam, laudantium est unde natus cum
-               numquam, neque facere. Lorem ipsum dolor sit amet consectetur
-               adipisicing elit. Ut, magni odio magnam commodi sunt ipsum eum!
-               Voluptas eveniet aperiam at maxime, iste id dicta autem odio
-               laudantium eligendi commodi distinctio!
+               Meet Eric John, an exceptional programmer driven by a love for
+               solving problems and learning ingenious algorithms. With a unique
+               blend of technical prowess and creative problem-solving, I
+               consistently delivers elegant solutions and visually captivating
+               interfaces. A perpetual learner, I thrives in collaborative
+               settings and is poised for continued success in the dynamic realm
+               of programming.
              </p>
            </div>
            <div class="flex-1 bg-white rounded-lg shadow-xl mt-4 p-8">
@@ -412,7 +414,7 @@ const LandingPage = () => {
              <div class="mt-4">
                <h4 class="text-xl text-gray-900 font-bold">Certificates</h4>
                <div className="carousel w-full h-96 mt-4">
-                  <Carousel data={CarouselData} />
+                 <Carousel data={CarouselData} />
                </div>
              </div>
            </div>

@@ -34,9 +34,9 @@ code {
   
 @media screen and (max-width: 767px) {
 
-  /* section{
-    padding-top: 50px;
-  } */
+  .p-8{
+    padding: .5rem !important;
+  }
 
   html,body{
     overflow-anchor: none;
